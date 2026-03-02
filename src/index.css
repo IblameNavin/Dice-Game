@@ -1,5 +1,23 @@
-*{
+@import "tailwindcss";
+
+:root {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom transitions */
+.transition-standard {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

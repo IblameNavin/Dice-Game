@@ -1,24 +1,19 @@
-import React from 'react'
-import StartGame from "./components/StartGame"
-import "./App.css"
-import { useState } from 'react'
-import GamePlay from './components/GamePlay'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Game from './pages/Game';
+import About from './pages/About';
 
 const App = () => {
-  const [nextPage, setNextPage] = useState(false)
-
-  const toggleNextPage = () =>{
-    setNextPage((prev) => !prev)
-  }
-
-
-
   return (
-    <>
-      {nextPage ? <GamePlay/> : <StartGame toggle = {toggleNextPage}/>}
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
- 
+export default App;
